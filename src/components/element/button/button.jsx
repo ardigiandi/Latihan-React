@@ -1,12 +1,11 @@
 const Button = (props) => {
+  const { children, className, type = "button", onClick = () => {}} = props;
 
-    const {children, className} = props;
+  return (
+    <button className={className} type={type} onClick={() => onClick()}>
+      {children}
+    </button>
+  );
+};
 
-    return(
-        <button className={className}>
-            {children}
-        </button>
-    )
-}
-
-export default Button
+export default Button;

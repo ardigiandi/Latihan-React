@@ -1,36 +1,51 @@
-import Button from "../element/button/button"
-import Inputform from "../element/input/inputform"
+import Button from "../element/button/button";
+import Inputform from "../element/input/inputform";
+
 
 const Registerpage = () => {
-    return(
-        <div className="space-y-5">
-        <Inputform
-        label="Email"
+
+    const handleRegister = (event) => {
+        event.preventDefault();
+        localStorage.setItem('email', event.target.email.value);
+        localStorage.setItem('password', event.target.password.value);
+        localStorage.setItem('confirm password', event.target.password.value);
+        window.location.href = '/product';
+    };
+
+  return (
+    <div className="space-y-5" onSubmit={handleRegister}>
+      <Inputform
+        label="email"
         type="email"
         placeholder="example@gmail.com"
-        htmlFor="Email"
-        id="Email"
-        name="Email"
-        />
-        <Inputform
-        label="Password"
-        type="Password"
+        htmlFor="email"
+        id="email"
+        name="email"
+      />
+      <Inputform
+        label="password"
+        type="password"
         placeholder="********"
-        htmlFor="Password"
-        id="Password"
-        name="Password"
-        />
-        <Inputform
-        label="Confirm Password"
-        type="Password"
+        htmlFor="password"
+        id="password"
+        name="password"
+      />
+      <Inputform
+        label="confirm Password"
+        type="password"
         placeholder="********"
-        htmlFor="Confirm Password"
-        id="Confirm Password"
-        name="Confirm Password"
-        />
-        <Button className="bg-blue-500 text-center text-white rounded-2xl py-4 mt-5 hover:bg-blue-700 w-full">Register</Button>
-        </div>
-    )
-}
+        htmlFor="confirm Password"
+        id="confirm Password"
+        name="confirm Password"
+      />
+      <Button
+        className="bg-blue-500 text-center text-white rounded-2xl py-4 mt-5 hover:bg-blue-700 w-full"
+        type="submit"
+      >
+        Register
+      </Button>
+    </div>
+  );
+};
 
-export default Registerpage
+export default Registerpage;

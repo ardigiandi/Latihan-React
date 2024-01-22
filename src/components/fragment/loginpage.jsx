@@ -1,28 +1,36 @@
 import Button from "../element/button/button";
 import Inputform from "../element/input/inputform";
 
-const Loginpage = (props) => {
-  const { className } = props;
+const Loginpage = () => { 
+  const handleLogin = (event) => {
+    event.preventDefault();
+    localStorage.setItem('email', event.target.email.value)
+    localStorage.setItem('password', event.target.password.value)
+    window.location.href = '/product'
+  };
 
   return (
-    <form className="space-y-5">
+    <form className="space-y-5" onSubmit={handleLogin}>
       <Inputform
-        label="Email"
+        label="email"
         type="email"
         placeholder="example@gmail.com"
-        htmlFor="Email"
-        id="Email"
-        name="Email"
+        htmlFor="email"
+        id="email"
+        name="email"
       />
       <Inputform
-        label="Password"
+        label="password"
         type="password"
         placeholder="********"
-        htmlFor="Password"
-        id="Password"
-        name="Password"
+        htmlFor="password"
+        id="password"
+        name="password"
       />
-      <Button className="bg-blue-500 text-center text-white rounded-2xl py-4 mt-5 hover:bg-blue-700 w-full">
+      <Button
+        className="bg-blue-500 text-center text-white rounded-2xl py-4 mt-5 hover:bg-blue-700 w-full"
+        type = "submit"
+      >
         Login
       </Button>
     </form>

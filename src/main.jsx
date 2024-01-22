@@ -4,7 +4,7 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './pages/login'
 import Register from './pages/register'
-import Product from './pages/product'
+import Productpage from './pages/product'
 
 
 const router = createBrowserRouter ([
@@ -18,7 +18,7 @@ const router = createBrowserRouter ([
   },
   {
     path:'/product',
-    element:<Product/>
+    element:<Productpage/>
   }
 ])
 

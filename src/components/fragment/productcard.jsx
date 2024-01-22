@@ -27,7 +27,7 @@ const body = (props) => {
 
   return (
     <>
-      <p>{title}</p>
+      <p className="font-bold">{title}</p>
       <h1>{children}</h1>
     </>
   );
