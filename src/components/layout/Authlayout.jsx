@@ -24,6 +24,7 @@ const Authlayout = (props) => {
             Login
           </Link>
         )}
+        
       </p>
     </div>
   );
